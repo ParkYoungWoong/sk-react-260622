@@ -6,7 +6,7 @@ import SignIn from './pages/SignIn'
 // https:heropy.dev/#/signin
 // https:heropy.dev/signin
 
-createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/', // http://localhost:5173/
     element: <Home />
@@ -20,3 +20,7 @@ createBrowserRouter([
     element: <SignIn />
   }
 ])
+
+export default function Router() {
+  return <RouterProvider router={router} />
+}
