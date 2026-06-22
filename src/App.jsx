@@ -1,18 +1,19 @@
-import { useState } from 'react'
+import Button from '@/components/Button'
 
 export default function App() {
-  // let count = 0
-  const [count, setCount] = useState(0)
+  const xyz = 123
   return (
     <>
-      <h1
+      <Button
+        variant="primary"
+        type="submit"
         onClick={function () {
-          const newCount = count + 1
-          setCount(newCount)
-          console.log(newCount)
+          console.log('clicked!!!')
         }}>
-        Hello {count}!
-      </h1>
+        추가
+      </Button>
+      <Button variant="danger">삭제</Button>
+      <Button variant="secondary">취소</Button>
     </>
   )
 }
