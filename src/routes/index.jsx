@@ -3,6 +3,7 @@ import Default from './layouts/Default'
 import Home from './pages/Home'
 import About from './pages/About'
 import SignIn from './pages/SignIn'
+import Dashboard from './pages/Dashboard'
 
 // https:heropy.dev/#/signin
 // https:heropy.dev/signin
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/signin', // http://localhost:5173/signin
         element: <SignIn />
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />
       }
     ]
   }

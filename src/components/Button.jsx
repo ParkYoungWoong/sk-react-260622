@@ -34,10 +34,8 @@ const user = {
   emails: ['theseq@gmail.com', 'theseq@naver.com']
 }
 
-// const age = user.age
-// const isValid = user.isValid
-const { age, isValid, ...rest } = user
-console.log(age) // 85
-console.log(isValid) // true
-console.log(rest)
-// { name: 'HEROPY', emails: ['theseq@gmail.com', 'theseq@naver.com'] }
+const newUser = {
+  ...user,
+  age: 99
+}
+console.log(newUser.age) // 85? 99?
