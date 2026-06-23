@@ -23,11 +23,26 @@ function Panel({ title, value, unit }) {
   )
 }
 
+function formatNumber(value) {
+  return (value / 10000).toFixed(1)
+}
 const _panels = [
   { title: '전체 매장', field: 'totalStores', value: '', unit: '곳' },
   { title: '운영 중', field: 'activeStores', value: '', unit: '곳' },
-  { title: '연 매출 합계', field: 'totalSales', value: '', unit: '억원' },
-  { title: '매장 평균', field: 'avgSales', value: '', unit: '억원' }
+  {
+    title: '연 매출 합계',
+    field: 'totalSales',
+    value: '',
+    unit: '억원',
+    formatter: formatNumber
+  },
+  {
+    title: '매장 평균',
+    field: 'avgSales',
+    value: '',
+    unit: '억원',
+    formatter: formatNumber
+  }
 ]
 
 export default function Dashboard() {
@@ -45,7 +60,9 @@ export default function Dashboard() {
         panels.map(function (panel) {
           return {
             ...panel,
-            value: response.data[panel.field]
+            value: panel.formatter
+              ? panel.formatter(response.data[panel.field])
+              : response.data[panel.field]
           }
         })
       )
