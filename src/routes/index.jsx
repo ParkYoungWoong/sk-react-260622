@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import SignIn from './pages/SignIn'
 import Dashboard from './pages/Dashboard'
+import Stores from './pages/Stores'
+import StoreDetails from './pages/StoreDetails'
 
 // https:heropy.dev/#/signin
 // https:heropy.dev/signin
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard />
+      },
+      {
+        path: '/stores', // http://localhost:5173/stores
+        element: <Stores />
+      },
+      {
+        path: '/stores/:storeId', // http://localhost:5173/stores/41
+        element: <StoreDetails />
       }
     ]
   }

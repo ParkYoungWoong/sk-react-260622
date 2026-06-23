@@ -4,7 +4,8 @@ const navigations = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/signin', label: 'Sign In' },
-  { to: '/dashboard', label: 'Dashboard' }
+  { to: '/dashboard', label: 'Dashboard' },
+  { to: '/stores', label: 'Store List' }
 ]
 
 export default function Sidebar() {

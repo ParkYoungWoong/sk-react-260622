@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import RegionBarChart from '@/components/charts/RegionBarChart'
+import RegionPieChart from '@/components/charts/RegionPieChart'
 
 // CRUD
 // RESTful API
@@ -8,6 +10,7 @@ import axios from 'axios'
 // Update -> PUT, PATCH
 // Delete -> DELETE
 
+// 14:35
 function Panel({ title, value, unit }) {
   // const { title, value, unit } = props
   return (
@@ -74,18 +77,24 @@ export default function Dashboard() {
     <>
       <h1>Dashboard Page!</h1>
       {dashboardData && (
-        <div className="grid grid-cols-4 gap-5">
-          {panels.map(function (panel) {
-            return (
-              <Panel
-                key={panel.field}
-                title={panel.title}
-                value={panel.value}
-                unit={panel.unit}
-              />
-            )
-          })}
-        </div>
+        <>
+          <div className="grid grid-cols-4 gap-5">
+            {panels.map(function (panel) {
+              return (
+                <Panel
+                  key={panel.field}
+                  title={panel.title}
+                  value={panel.value}
+                  unit={panel.unit}
+                />
+              )
+            })}
+          </div>
+          <div className="grid h-[350px] grid-cols-2 gap-5">
+            <RegionBarChart data={dashboardData.regionSales} />
+            <RegionPieChart data={dashboardData.pieData} />
+          </div>
+        </>
       )}
     </>
   )

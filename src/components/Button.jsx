@@ -34,6 +34,7 @@ const user = {
   emails: ['theseq@gmail.com', 'theseq@naver.com']
 }
 
+console.log(user.abc)
 const newUser = {
   ...user,
   age: 99
